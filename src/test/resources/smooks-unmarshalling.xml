@@ -1,0 +1,25 @@
+<smooks-resource-list xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+	xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.4.xsd">
+
+	<jb:bean beanId="leads" class="es.omarall.smooks.Leads"
+		createOnElement="/Leads">
+		<jb:wiring property="leads" beanIdRef="leadsCollection" />
+	</jb:bean>
+
+	<jb:bean beanId="leadsCollection" class="java.util.ArrayList"
+		createOnElement="/Leads">
+		<jb:wiring beanIdRef="lead" />
+	</jb:bean>
+
+	<jb:bean beanId="lead" class="es.omarall.smooks.Lead"
+		createOnElement="/Leads/row">
+		<jb:value property="leadOwner" data="#/FL[@val='Lead Owner']" />
+		<jb:value property="company" data="#/FL[@val='Company']" />
+		<jb:value property="firstName" data="#/FL[@val='First Name']" />
+		<jb:value property="lastName" data="#/FL[@val='Last Name']" />
+		<jb:value property="employeesNumber" data="#/FL[@val='No of Employees']"
+			decoder="Integer"   />
+		<!-- <jb:value property="creationTime" data="#/FL[@val='2010-03-16 10:04:52']"/> -->
+	</jb:bean>
+
+</smooks-resource-list>

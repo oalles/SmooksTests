@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<smooks-resource-list xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+	xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.4.xsd" xmlns:ftl="http://www.milyn.org/xsd/smooks/freemarker-1.1.xsd">
+
+	<ftl:freemarker applyOnElement="es.omarall.smooks.Lead">
+		<ftl:template><!--<Leads><row no="1000">
+		<FL val="Lead Owner">${lead.leadOwner}</FL>
+		<FL val="Company">${lead.company}</FL>
+		<FL val="First Name">${lead.firstName}</FL>
+		<FL val="Last Name">${lead.lastName}</FL>
+		<FL val="No of Employees">${lead.employeesNumber}</FL>
+	</row> </Leads>-->
+		</ftl:template>
+	</ftl:freemarker>
+
+</smooks-resource-list>
